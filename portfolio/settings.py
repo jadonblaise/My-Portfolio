@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG_SETTINGS", False)
 
-ALLOWED_HOSTS = ['3.64.217.244']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -151,7 +151,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'Me','static')]
 
-MEDIA_ROOT = "/media/"
+MEDIA_URL = "/media/"
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
