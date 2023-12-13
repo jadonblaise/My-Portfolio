@@ -1,0 +1,110 @@
+<style>
+    #contact {
+        margin-top: 80px;
+    }
+
+    .contact-left {
+        color: #fff;
+        flex-basis: 35%;
+    }
+
+    .contact-right {
+        flex-basis: 60%;
+    }
+
+    .contact-left p {
+        margin-top: 30px;
+    }
+
+    .contact-left p i {
+        color: #ff004f;
+        margin-right: 15px;
+        font-size: 25px;
+    }
+
+    .social-icons {
+        margin-top: 30px;
+    }
+
+    .social-icons a {
+        text-decoration: none;
+        font-size: 30px;
+        margin-right: 15px;
+        color: #ababab;
+        display: inline-block;
+        transition: transform 0.5s;
+    }
+
+    .social-icons a:hover {
+        color: #ff004f;
+        transform: translateY(-5px);
+    }
+
+    .contact-right form {
+        width: 100%;
+    }
+
+    form input,
+    form textarea {
+        width: 100%;
+        border: 0;
+        outline: none;
+        background: #262626;
+        padding: 15px;
+        margin: 15px 0;
+        color: #fff;
+        font-size: 18px;
+        border-radius: 6px;
+    }
+
+    form .btn2 {
+        padding: 14px 60px;
+        font-size: 18px;
+        margin-top: 20px;
+        cursor: pointer;
+    }
+
+    /* css for small screen */
+    @media only screen and (max-width: 600px) {
+
+        .contact-left,
+        .contact-right {
+            flex-basis: 100%;
+        }
+    }
+</style>
+
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 style="font-size: 40px; font-weight: 500; color: blanchedalmond;">Contact Me</h1>
+                <p><i class="bi bi-envelope-at-fill"></i> contact@example.com</p>
+                <p><i class="bi bi-whatsapp"></i> +380689246905</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/unpredictable_blaise/"><i class="bi bi-instagram"
+                            style="margin-right: 10px;"></i></a>
+                    <a href="https://www.twitter.com/investorblaze/"><i class="bi bi-twitter-x"
+                            style="margin-right: 10px;"></i></a>
+                    <a href="https://github.com/jadonblaise"><i class="bi bi-github"
+                            style="margin-right: 10px;"></i></a>
+                    <a href="https://www.linkedin.com/in/blaise-uwaforo-9b342b1a4/"><i class="bi bi-linkedin"
+                            style="margin-right: 10px;"></i></a>
+                </div>
+            </div>
+            <div class="contact-right">
+                <form method="post" action="{% url 'Me:contact_view' %}">
+                    {% csrf_token %}
+                    <input type="text" name="{{ form.name.name }}" placeholder="Your Name" required>
+                    <input type="email" name="{{ form.email.name }}" placeholder="Your Email" required>
+                    <textarea name="{{ form.message.name }}" rows="6" placeholder="Your Message"></textarea>
+                    {% if message_sent %}
+                    <p style="color:#fff">Message sent successfully!</p>
+                    {% endif %}
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

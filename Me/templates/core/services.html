@@ -1,0 +1,75 @@
+<style>
+    .service-list{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-gap: 40px;
+        margin-top: 50px;
+    }
+    .service-list div{
+        background: #262626;
+        padding: 40px;
+        font-size: 13px;
+        font-weight: 300;
+        border-radius: 10px;
+        transition: background 0.5s, transform 0.5s;
+    }
+    .service-list div i{
+        font-size: 40px;
+        margin-bottom: 30px;
+    }
+    .service-list div h2{
+        font-size: 30px;
+        font-weight: 500;
+        margin-bottom: 15px;
+    }
+    .service-list div a{
+        text-decoration: none;
+        color: #fff;
+        font-size: 12px;
+        margin-top: 20px;
+        display: inline-block;
+    }
+    .service-list div:hover{
+        background: rgb(138, 19, 19);
+        transform: translateY(-10px);
+    }
+</style>
+
+<div id="service">
+    <div class="container">
+        <div style="color:#fff">
+            <h3 style="font-size: 40px; font-weight: 500; color: blanchedalmond;"><br>Services</h3>
+            <div class="service-list">
+                <div>
+                    <i class="bi bi-browser-chrome"></i>
+                    <h2>Web Design</h2>
+                    <p>Responsive webpages and integration of databases to build robust web applications that helps to
+                        achieves all your marketing and financial goals</p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="bi bi-activity"></i>
+                    <h2>Blockchain</h2>
+                    <p>Design and implementation of decentralized solutions, leveraging technologies like Ethereum or
+                        Hyperledger to create customized blockchain applications and smart contracts for diverse
+                        industries.</p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="bi bi-database-fill-check"></i>
+                    <h2>Data Analysis</h2>
+                    <p>Proven track record of extracting actionable insights and driving informed decision-making
+                        through advanced analytical techniques.</p>
+                    <a href="#">Learn more</a>
+                </div>
+                <div>
+                    <i class="bi bi-filetype-py"></i>
+                    <h2>Software Development</h2>
+                    <p>Development of standalone software applications that run on Windows, macOS, and Linux.</p>
+                    <a href="#">Learn more</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

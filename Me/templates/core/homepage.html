@@ -1,0 +1,258 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Blaise</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <!-- Your custom styles -->
+    <style>
+        html{
+            scroll-behavior: smooth;
+        }
+        body {
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1503252947848-7338d3f92f31?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center;
+            background-size: cover;
+            background-blend-mode: darken;
+            background-attachment: fixed;
+            padding-top: 200px;
+        }
+
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.944);
+            margin-top: 20px;
+            border-radius: 30px;
+            padding: 0.5rem;
+        }
+
+        .logo {
+            width: 80px;
+        }
+
+        .github {
+            background-color: rgb(199, 92, 92);
+            color: #fff;
+            font-size: 15px;
+            padding: 8px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: 0.3s background-color;
+        }
+
+        .github:hover {
+            background-color: rgb(235, 12, 12);
+        }
+
+        .navbar-toggler {
+            border: none;
+            font-size: 1.25rem;
+        }
+
+        .navbar-toggler-icon {
+            background-color: #fff8f8;
+        }
+
+        .navbar-toggler:focus,
+        .btn-close:focus {
+            border: none;
+            outline: none;
+            color: #f9f7f7;
+        }
+
+        .nav-link {
+            color: white;
+            font-weight: 500;
+            font-size: 20px;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: rgb(201, 55, 55);
+        }
+
+        @media (min-width: 991px) {
+
+            .nav-link::before {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 0;
+                height: 2px;
+                background-color: red;
+                visibility: hidden;
+                transition: 0.4s ease-in-out;
+            }
+
+            .nav-link:hover::before {
+                width: 100%;
+                visibility: visible;
+            }
+        }
+
+        .mobile-nav-link {
+            background-color: black;
+        }
+
+        .offcanvas.show .mobile-nav-link {
+            background-color: black;
+            /* Change this to the desired background color */
+        }
+
+        main {
+            background-color: rgb(9, 9, 9);
+            position: relative;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0 40px;
+            max-width: 100%;
+            margin: auto;
+            border-radius: 15px;
+            overflow: hidden;
+            z-index: 5;
+        }
+
+        .card {
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .status h2 {
+            font-size: 70px;
+        }
+
+        .status p {
+            padding-left: 10px;
+            padding-right: 20px;
+        }
+        .btn.btn2{
+            display: inline-block;
+            background: rgb(199, 92, 92);
+        }
+        .btn.btn2:hover{
+            background-color: rgb(235, 12, 12);
+        }
+        footer{
+            color: #fff;
+            width: 100%;
+            text-align: center;
+            padding: 25px 0;
+            background: #090909;
+            font-weight: 300;
+            margin-top: 20px;
+            border-radius: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand me-auto" href='{% url "Me:frontpage" %}'><img
+                        src="{% static 'img/101_coded.png' %}" class="logo"></a>
+
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                    aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img
+                                src="{% static 'img/101_coded.png' %}" class="logo"></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link mx-lg-2 mobile-nav-link" aria-current="page" href='{% url "Me:frontpage" %}'>Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link mx-lg-2 mobile-nav-link" href="#about">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link mx-lg-2 mobile-nav-link" href="#service">Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link mx-lg-2 mobile-nav-link" href="#carouselExampleFade">Projects</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link mx-lg-2 mobile-nav-link" href="#contact{% url 'Me:contact_view' %}">Contact</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <a href="https://github.com/jadonblaise" class="github">Github</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+        <!-- End Navbar -->
+
+        <!-- Profile Section -->
+        <main>
+            <div class="container mt-4">
+                <div class="row">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{% static 'img/jay_bg.jpg' %}" class="card-img-top" alt="...">
+                        <div class="card-body" style="color:#fff">
+                            <h5 class="card-title">Engr. Blaise C.U</h5>
+                            <a href="img/Cv_b.pdf" download class="btn btn2"> Download CV</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-8" style="color: white;">
+                        <h1 style="font-size: 60px; color: whitesmoke;"><span style="color:rgb(199, 92, 92);">Fullstack
+                            </span> / Python Backend Developer
+                        </h1> <br>
+                        <p style="font-size: 30px;">Based in Europe</p> <br> <br>
+                        <div class="d-flex align-items-center">
+                            <div class="mr-40 status">
+                                <div class="d-flex align-items-center">
+                                    <h2 style="color: rgb(199, 92, 92);">4 </h2>
+                                    <p>Years of <br>Experience</p>
+
+                                </div>
+                            </div>
+                            <div class="mr-40 status">
+                                <div class="d-flex align-items-center">
+                                    <h2 style="color: rgb(199, 92, 92);"> 500+ </h2>
+                                    <p>Clients <br> Globally</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% include 'core/about_me.html' %}
+            {% include 'core/services.html' %}
+            {% include 'core/projects.html' %}
+            {% include 'core/contact.html' %}
+
+        </main>
+        <footer>
+            <div>
+                <p>Copyright <i class="bi bi-c-circle"></i> 101_Coded is Proudly Powered by <span> <a href="https://www.linkedin.com/in/blaise-uwaforo-9b342b1a4/">Blaise</a></span></p>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
