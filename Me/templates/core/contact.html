@@ -99,7 +99,12 @@
                     <input type="email" name="{{ form.email.name }}" placeholder="Your Email" required>
                     <textarea name="{{ form.message.name }}" rows="6" placeholder="Your Message"></textarea>
                     {% if message_sent %}
-                    <p style="color:#fff">Message sent successfully!</p>
+                    <p id="success_msg" style="color:greenyellow">Message sent successfully!</p>
+                    <script>
+                        setTimeout(function() {
+                            document.getElementById('success_msg').style.display = 'none';
+                        }, 5000); // Hide the success message after 5 seconds
+                    </script>
                     {% endif %}
                     <button type="submit" class="btn btn2">Submit</button>
                 </form>
