@@ -1,9 +1,8 @@
 from django.urls import path
-from .views import frontpage, contact_view
+from .views import contact_view
 
 
 app_name = "Me"
 urlpatterns = [
-    path("", frontpage, name='frontpage'),
-    path("contact/", contact_view, name='contact_view')
+    path("", contact_view, name='contact_view')
 ]

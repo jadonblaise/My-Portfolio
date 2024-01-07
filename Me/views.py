@@ -3,8 +3,6 @@ from .form import CommentForm
 
 # Create your views here.
 
-def frontpage(request):
-    return render(request, 'core/homepage.html', {})
 
 def contact_view(request):
     message_sent = False
