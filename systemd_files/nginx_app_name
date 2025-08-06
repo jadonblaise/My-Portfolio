@@ -10,3 +10,17 @@ server {
         proxy_pass http://unix:/run/gunicorn.sock;
     }
 }
+
+server{
+
+        listen 80;
+        server_name 101coded.tech www.101coded.tech;
+
+
+        location / {
+
+                include proxy_params;
+                proxy_pass http://unix:/home/ubuntu/projects/My-Portfolio/app.sock;
+                proxy_redirect off;
+        }
+}
