@@ -1,0 +1,47 @@
+{% load static %}
+
+<!-- Navbar -->
+
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand me-auto" href='{% url "Me:contact_view" %}'><img
+                src="{% static 'img/101_coded.png' %}" class="logo"></a>
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><img
+                        src="{% static 'img/101_coded.png' %}" class="logo"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link mx-lg-2 mobile-nav-link" aria-current="page"
+                            href='{% url "Me:contact_view" %}'>Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-lg-2 mobile-nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-lg-2 mobile-nav-link" href="#service">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-lg-2 mobile-nav-link" href="#carouselExampleFade">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-lg-2 mobile-nav-link"
+                            href="#contact">Contact</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <a href="https://github.com/jadonblaise" class="github">Github</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</nav>
+<!-- End Navbar -->

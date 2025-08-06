@@ -18,3 +18,6 @@ def contact_view(request):
     
     context = {'form': form, 'message_sent': message_sent}
     return render(request, 'core/homepage.html', context)
+
+def download_cv_unavailable(request):
+    return render(request, 'core/custom_404.html', status=404)
